@@ -24,3 +24,9 @@ minute_hash = parsed_response.fetch("minutely")
 minute_temp = minute_hash.fetch("summary")
 puts "The current temperature is " + current_temp.to_s + "."
 puts "The weather for the next hour is #{minute_temp}."
+hour_hash = parsed_response.fetch("hourly")
+hour_hash = hour_hash.fetch("data")
+hour_hash.each do |num|
+  pp num.keys
+  #pp num.fetch("precipProbability".to_i)
+end
